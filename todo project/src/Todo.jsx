@@ -15,8 +15,12 @@ let updateTodos = (event) => {
 };
 
 let addNewTodo = () => {
+    if (!newTodo || newTodo.trim() === '') {
+        alert("Task cannot be empty!");
+        return;
+    }
     setTodos((prevTodos) => {
-            return [...prevTodos, { task: newTodo, id: uuidv4() }];
+            return [...prevTodos, { task: newTodo, id: uuidv4() ,isDone: false}];
         });
     setNewTodo(''); 
 };
@@ -45,11 +49,14 @@ let lowerCaseAll =() => {
 
 
 let editTodo = (id, newTask) => {
-     if (newTask === null) return;
-    if (!newTask || newTask.trim() === '') {
-        alert("Task cannot be empty!");
-        return;
+    if (newTask === null) return;
+     
+   while (newTask.trim() === '') {
+        newTask = prompt("Task cannot be empty! Please enter a valid task:", "");
+        if (newTask === null) return; 
     }
+   
+    
     setTodos((prevTodos) => {
         return prevTodos.map((todo) => {
             if (todo.id === id) {
@@ -58,7 +65,27 @@ let editTodo = (id, newTask) => {
             return todo;
         });
     });
+};
+
+let markTaskAsDone = (id) => {
+    setTodos((prevTodos) => {
+        return prevTodos.map((todo) => {
+            if (todo.id === id) {
+                return { ...todo, isDone: !todo.isDone };
+            }
+            return todo;
+        });
+    });
 }
+
+let markAllAsDone = () => {
+    setTodos((prevTodos) => {       
+        return prevTodos.map((todo) => {
+            return { ...todo, isDone: true };
+        });
+    });
+}
+
 
 
 
@@ -89,18 +116,23 @@ let editTodo = (id, newTask) => {
         todos.map((e) => {
             return <li key={e.id}>
                 <div className="todo-item">
-                  <span>{e.task}</span>
+                  <span className={e.isDone ? 'done-task' : ''}>{e.task}</span>
              &nbsp; &nbsp;
             <button onClick={()=>deleteTodo(e.id)} className="delete"><i class="fa-solid fa-trash"></i></button>
             <button onClick={() => editTodo(e.id, prompt("Edit your task:", e.task))} className="edit"><i class="fa-solid fa-pen-to-square"></i></button>
+            <button onClick={() => markTaskAsDone(e.id)} className="done"><i class="fa-solid fa-check"></i></button>
               </div>
             </li>
         })
     }
 </ul>
 <br></br>
+<button onClick={markAllAsDone}>Mark All As Done</button> &nbsp;&nbsp;
+<br></br>
+<br></br>
 <button onClick={upperCaseAll}>UpperCase All</button> &nbsp;&nbsp;
 <button onClick={lowerCaseAll}>LowerCase All</button>
+
 
 </>
     )

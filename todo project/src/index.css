@@ -93,6 +93,11 @@ button {
     color: red;
 }
 
+.done-task {
+    text-decoration: line-through;
+    color: gray; /* Optional: Dim the color to indicate completion */
+}
+
 /*added custom by anirudh ends here  */
 
 
