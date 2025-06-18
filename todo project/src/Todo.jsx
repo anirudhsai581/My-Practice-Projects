@@ -5,13 +5,13 @@ import {v4 as uuidv4} from 'uuid';
 
 export default function Todo () {
 
-const [todos, setTodos] = useState([{task:"simple task",id:uuidv4()}]);
-
-const [newTodo, setNewTodo] = useState(() =>{
+const [todos, setTodos] = useState(() =>{
     const savedTodos = localStorage.getItem('todos');
         console.log('Loaded from localStorage:', savedTodos);
         return savedTodos ? JSON.parse(savedTodos) : [{ task: 'simple task', id: uuidv4(), isDone: false }];
 });
+
+const [newTodo, setNewTodo] = useState('');
 useEffect(() => {
         console.log('Saved to localStorage:', todos);
         localStorage.setItem('todos', JSON.stringify(todos));
