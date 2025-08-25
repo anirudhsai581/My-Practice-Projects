@@ -1,0 +1,433 @@
+/* ================================ */
+/* 1. Selectors & Basic Properties - Hero Section */
+/* ================================ */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f7f7;
+  font-family: "Poppins", Times, serif;
+  color: #333;
+}
+.hero {
+  padding: 100px;
+}
+.hero_title {
+  color: #f5f5f5;
+}
+.hero_description {
+  color: #81da76;
+}
+.hero_highlight {
+  color: #dbfbe0;
+}
+
+/* ================================ */
+/* 2. Fonts - Features Section */
+/* ================================ */
+.feature {
+  padding: 100px;
+}
+.feature_item {
+  padding: 30px 0;
+}
+.feature_title {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #23c93c;
+  margin-bottom: 10px;
+}
+.feature_title--selected {
+  text-decoration: underline;
+}
+.feature_description {
+  /* text-align: right;
+  line-height: 1.5rem;
+  letter-spacing: 0.1rem;
+  word-spacing: 0.8rem;
+  white-space: nowrap; */
+  /* practice purpose added properties */
+}
+
+/* ================================ */
+/* 3. Colors - Call to Action Section */
+/* ================================ */
+.cta {
+  padding: 100px;
+  background-color: #5bb471;
+  color: #fff;
+  text-align: center;
+}
+
+.cta_description {
+  padding: 15px 0;
+  color: #dbdbdb;
+}
+button {
+  border: none;
+}
+
+.cta_button {
+  padding: 10px 20px;
+}
+/* ================================ */
+/* 4. Box Model -Video Section */
+/* ================================ */
+.video {
+  text-align: center;
+  padding: 100px;
+  font-weight: 500;
+}
+.video_title {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.video_description {
+  margin-top: 10px;
+  font-weight: 300;
+  color: #6e6e6e;
+}
+
+.video_controls {
+  margin-top: 20px;
+}
+
+.video_button {
+  border: 1px solid #5bb471;
+  background: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #5bb471;
+}
+.video_button--primary {
+  margin-right: 10px;
+}
+.video_container {
+  margin-top: 20px;
+  background-color: #ccc;
+  width: 100%;
+  height: 500px;
+  box-shadow: 2px 3px 6px 2px rgba(22, 20, 20, 0.76);
+}
+
+/* ================================ */
+/* 5. Flex - Programs Section */
+/* ================================ */
+.programs {
+  padding: 100px;
+  background-color: #eee;
+  padding-bottom: 200px;
+}
+.programs_cards {
+  /* border: #23c93c 10px solid; */
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+  align-items: stretch;
+}
+.programs_card {
+  background-color: #b5b5b5;
+  padding: 30px;
+  flex-basis: 30%;
+  height: 400px;
+}
+/* ================================ */
+/* 6. HTML Elements & Images - Form Section */
+/* ================================ */
+
+.element {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px;
+  gap: 60px;
+  background-color: #f8f9fa;
+}
+.element_left {
+  flex: 1;
+  /* width: 100px;
+  height: 100px;
+  background-color: grey; */
+}
+.element_right {
+  flex: 1;
+}
+.element_subtitle {
+  color: #5d5d5d;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.element_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.element_placeholder {
+  background-color: grey;
+  width: 100%;
+  height: 100%;
+}
+.element_list {
+  list-style-type: none;
+  padding-left: 0;
+}
+.element_list-item {
+  padding: 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+  color: #5d5d5d;
+}
+.element_list-item::before {
+  content: "\2192";
+  margin-right: 10px;
+  color: #34c759;
+}
+.element_form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.element_form-group label {
+  color: #333;
+  font-weight: 500;
+}
+.element_form-group input,
+.element_form-group select {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-family: inherit;
+}
+.element_form-group input:focus,
+.element_form-group select:focus {
+  outline: none;
+  border-color: #34c759;
+  box-shadow: 0 0 0 2px rgba(52, 199, 89, 0.2);
+}
+.element_form-group select {
+  cursor: pointer;
+  background-color: white;
+}
+.element_form-group option {
+  padding: 8px;
+}
+.element_form-group option:hover {
+  background-color: lightgreen;
+}
+.element_button {
+  background-color: #34c759;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+.element_button:hover {
+  background-color: #46db6c;
+}
+
+/* ================================ */
+/* 8. Images and Final Styling */
+/* ================================ */
+/* using already used classes here for this respectove styling
+without conflicting them so to have a structure to revise */
+.hero {
+  height: 50vh;
+  background-image: url("images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.55);
+  background-blend-mode: overlay;
+  text-align: center;
+  align-content: center;
+}
+.feature {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.feature_container {
+  flex: 1;
+  /* flex-basis: 50%; */
+  /*can also use flex:1 for both childs like before this is another way but this way we can only use if we know
+  there will always be 2 childs etc , if multiple then without hardcoding percentages we can just use flex:1  */
+}
+.feature_image-container {
+  flex: 1;
+  /* flex-basis: 50%; */
+}
+.feature_image {
+  /* we need this otherwise its in its original size now we make it 
+    cotainer size ig.explore this again */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* object fit if not used when shrinking image doesnt look good,this is kind of like a hack , proper fix is to handle with mediaquery */
+}
+
+.cta_title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.cta_button--primary:hover {
+  background-color: #d0d0d0;
+  cursor: pointer;
+}
+
+.video_button:hover {
+  background-color: #5bb471;
+  color: white;
+}
+
+.video_container {
+  background-image: url("images/video.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.05);
+  height: 700px;
+}
+
+.programs_card {
+  background: none;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 15px;
+  /* height: 500px; */
+  border-radius: 8px;
+}
+.programs_card-img {
+  height: 700px; /*can be auto  to maintain aspect ratio well but here i want them aligned height wise*/
+  width: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.programs_card-description {
+  color: #6e6e6e;
+  font-weight: 100px;
+  margin-bottom: 15px;
+}
+.programs_button {
+  background-color: #34c759;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: auto; /*button is pushed to bottom of flex container as flex-direction is column   */
+}
+.programs_button:hover {
+  background-color: #2db14e;
+}
+
+.element_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ================================ */
+/* 9. Navbar and Footer Section */
+/* ================================ */
+.nav {
+  padding: 10px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav_items {
+  display: flex;
+  /* border: 1px solid black; */
+  gap: 30px;
+}
+.nav_items a {
+  text-decoration: none;
+  color: #333;
+}
+.nav_items a:hover {
+  color: #34c759;
+}
+
+/* footer */
+footer {
+  background-color: #eee;
+  padding: 60px 100px 20px;
+  /* display: flex;
+  flex-direction: column; */
+}
+.footer_content {
+  /* padding: 20px 100px; */
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  gap: 30px;
+}
+.footer_content_logo {
+  flex-basis: 30%;
+}
+.footer_content_logo img {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+.footer_content_logo p {
+  margin-bottom: 20px;
+  color: #5d5d5d;
+}
+.footer_links {
+  display: flex;
+  gap: 50px;
+}
+.footer_column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer_column h3 {
+  color: #121111;
+}
+.footer_SocialLinks {
+  display: flex;
+  gap: 10px;
+}
+.footer_SocialLinks a {
+  color: #5d5d5d;
+  font-size: 20px;
+}
+.footer_SocialLinks a:hover {
+  color: #34c759;
+  font-size: 25px;
+}
+
+.footer_column a {
+  text-decoration: none;
+  color: #5d5d5d;
+}
+
+.footer_license {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 20px;
+  text-align: center;
+  color: #5d5d5d;
+}
+.footer_content_logo-button {
+  background-color: #34c759;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.footer_content_logo-button:hover {
+  background-color: #2db14e;
+}
